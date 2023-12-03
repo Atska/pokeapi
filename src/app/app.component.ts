@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MainComponent } from './components/main/main.component';
+import { HttpService } from './services/http.service';
 
 @Component({
   selector: 'app-root',
@@ -20,4 +21,8 @@ import { MainComponent } from './components/main/main.component';
 })
 export class AppComponent {
   title = 'poke';
+
+  constructor(private http: HttpService){
+    this.http.getPokemon();
+  }
 }
